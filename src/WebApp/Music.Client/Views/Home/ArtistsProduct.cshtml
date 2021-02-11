@@ -1,0 +1,60 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<link href="~/css/ProductList.css" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark">
+    <div class="col-md-5 p-lg-5 mx-auto my-5">
+        <h1 class="display-4 font-weight-normal text-white">@ViewBag.userName Collection</h1>
+        <p class="lead font-weight-normal text-white">Welcome to Erfan music collection.</p>
+        <a class="btn btn-outline-secondary text-white" href="#products">See Collection</a>
+    </div>
+    <div class="product-device box-shadow d-none d-md-block"></div>
+    <div class="product-device product-device-2 box-shadow d-none d-md-block"></div>
+</div>
+<div class="container">
+    <div class="row clearfix" id="products">
+
+        @foreach (var item in ViewBag.Musics)
+        {
+            <div class="col-lg-3 col-md-4 col-sm-12">
+                <div class="card product_item">
+                    <div class="body">
+                        <div class="cp_img">
+                            @if (item.Artist.Name == "tatallo")
+                            {
+                                <img src="https://i2.sndcdn.com/artworks-000439922307-ewnkaf-t500x500.jpg" alt="Product" class="img-fluid">
+                            }
+                            @if (item.Artist.Name == "Tohi")
+                            {
+                                <img src="https://m.media-amazon.com/images/I/61RGOy+F3oL._SS500_.jpg" alt="Product" class="img-fluid">
+                            }
+                            @if (item.Artist.Name == "resa sadeghi")
+                            {
+                                <img src="https://yt3.ggpht.com/ey2WB4NXEik8fd8W05GC8uYfYF6kVKGtuiwjW8sq7ivy5gld_J0N0EZbU0ehMoNkEG8bM8h_fQw=s900-c-k-c0x00ffffff-no-rj" alt="Product" class="img-fluid">
+                            }
+                            @if (item.Artist.Name == "chavoshi")
+                            {
+                                <img src="https://i.pinimg.com/236x/9a/06/95/9a0695a5ede26edb8a63c6cbac01df39.jpg" alt="Product" class="img-fluid">
+                            }
+
+                            <div class="hover">
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-plus"></i></a>
+                                <a href="javascript:void(0);" class="btn btn-primary btn-sm waves-effect"><i class="zmdi zmdi-shopping-cart"></i></a>
+                            </div>
+                        </div>
+                        <div class="product_details">
+                            <h5>@item.Name</h5>
+                            <ul class="product_price list-unstyled">
+                                <li class="old_price">$12.00</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
