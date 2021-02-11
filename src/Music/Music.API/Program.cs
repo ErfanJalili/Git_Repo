@@ -18,6 +18,7 @@ namespace Music.API
             var host = CreateHostBuilder(args).Build();
             CreateAndSeedDatabase(host);
             host.Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
